@@ -1,4 +1,8 @@
-let d = data.map((value,index)=>{
+
+
+function display(p)
+{
+  let d = p.map((value,index)=>{
 
     return `<div class="col-4"><div class="card" style="width:400px">
     <img class="card-img-top" src="${value.image}" alt="Card image" style="width:100%">
@@ -10,6 +14,12 @@ let d = data.map((value,index)=>{
   </div></div>`
 
 })
+
+document.getElementById("display").innerHTML = d.join(" ");
+
+}
+
+display(data);
 
 let cart= [];
 
@@ -41,4 +51,19 @@ const addToCart = (index)=>{
 
 }
 
-document.getElementById("display").innerHTML = d.join(" ");
+
+function searchItem()
+{
+  let searchItem = document.getElementById("searchTerm").value;
+
+  let p = data.filter((v)=>{
+
+        return v.title.indexOf(searchItem) >=0;
+
+  })
+
+  display(p);
+
+
+
+}
