@@ -9,6 +9,7 @@ function display(p)
     <div class="card-body">
       <h4 class="card-title">${value.title}</h4>
       <p class="card-text">${value.description}</p>
+      <p class="card-text">${value.price}</p>
       <button class="btn btn-primary" onclick="addToCart(${index});">Add To Cart</button>
     </div>
   </div></div>`
@@ -63,6 +64,37 @@ function searchItem()
   })
 
   display(p);
+
+
+
+}
+
+function managesort()
+{
+ 
+  let d = document.getElementById("select").value;
+
+  alert(d);
+  let p = data.sort((a,b)=>{
+
+    if(d == "PL")
+    {
+
+      return a.price-b.price;
+    }
+    else if(d== "PH")
+    {
+      return b.price-a.price;
+    }
+
+  
+
+  })
+
+
+  console.log(p);
+
+  display(data);
 
 
 

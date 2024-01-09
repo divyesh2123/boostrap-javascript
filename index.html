@@ -11,6 +11,18 @@
 
     
   <input type="text" id="searchTerm"  />
+
+  <select onchange="managesort()" id="select">
+
+    <option value="PL">Price Low to High</option>
+    <option value="PH">Price Hight to Low</option>
+    <option value="TA">title A to Z</option>
+    <option value="TD">title Z to A</option>
+
+
+  </select>
+
+
   <button onclick="searchItem()">Search</button>
     <nav class="navbar navbar-expand-sm bg-light">
 
